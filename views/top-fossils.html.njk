@@ -2,6 +2,22 @@
   {% extends 'base.html.njk' %}
   {% block body %}
 
+
+    <form action="/like-fossil">
+      <div>
+        <label for="namefield">liked Fossil</label>
+        <select name="name"> 
+         {% for fossil in fossils%}
+            <option value= {{fossil.name}} > {{ fossil.name }} </option>
+         {% endfor %}
+        </select>
+      </div>
+      <div>
+        <input type="submit" />
+      </div>
+    </form>
+
+
     <div class="fossil-div">
     <h1> Welcome {{name}} </h1>
     {% for fossil in fossils %}
@@ -12,6 +28,10 @@
       </div>
     {% endfor %}
     </div>
+
+
+    
+
    
   {% endblock %} 
 
